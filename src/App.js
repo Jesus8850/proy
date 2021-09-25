@@ -10,8 +10,10 @@ function App() {
       
       <NavBar />
       
+      <ItemListConteiner/> 
+
       <Producto nombre="Jesus" apellido= "Guerrieri" />
-      <ItemListConteiner/>
+
       
       </>
   );
