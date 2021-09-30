@@ -9,12 +9,12 @@ function ItemListConteiner () {
 
     const getProd = new Promise ( (resolve) =>{
         setTimeout( () =>{
-            const MockProd = [
+            const mockProd = [
                 {id: 1, titulo: "Camiseta Eslovenia", descripcion: "Titular", precio: 9000 ,img: <img src="/img/Camis1.jpg" alt="C1" />},
                 {id: 2, titulo: "Camiseta Eslovaquia", descripcion: "Suplente", precio: 11500 ,img: <img src="/img/Camis2.jpg" alt="C2" />},
                 {id: 3, titulo: "Short Midland", descripcion: "Juego", precio: 1400,img: <img src="/img/Short1.jpg" alt="S1" /> }
             ] 
-            resolve(MockProd)
+            resolve(mockProd)
         },2000)
     }
     )
