@@ -1,5 +1,6 @@
 import React from 'react';
 import { Item } from './Item';
+import ItemCount from './ItemCount';
 
 
 export const ItemList = ({ items }) => {
@@ -8,6 +9,7 @@ return (
       {items.map((item) => (
         <>
               <Item item={item} />
+              <ItemCount stock = "5" initial = "1" />
         </>
       ))}
     </ul>

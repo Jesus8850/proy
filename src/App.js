@@ -5,20 +5,17 @@ import Producto from './components/Product/Product';
 import ItemListConteiner from './components/Product/ItemListConteiner';
 import ItemCount from './components/Product/ItemCount';
 import ItemDetailConteiner from './components/Product/ItemDetailConteiner';
+import AppRouter from './AppRouter/AppRouter';
+
 
 function App() {
   return (
       <>
-      
-      <NavBar />
+<AppRouter/>
 
-      <ItemCount stock = "5" initial = "1" />
-      
-      <ItemListConteiner/> 
 
-      <Producto nombre="Jesus" apellido= "Guerrieri" />
 
-      <ItemDetailConteiner/>
+
 
       </>
   );

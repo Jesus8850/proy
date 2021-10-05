@@ -1,32 +1,33 @@
 import React,{useState, useEffect} from "react";
-import Producto from "./Product";
-import { ItemDetail } from "./ItemDetail";
+import  ItemDetail  from "./ItemDetail";
 
 function ItemDetailConteiner () {
 
-    const [prod, setProd] = useState([])
+    const [infoProd, setInfoProd] = useState();
 
-    const getProd = new Promise ( (resolve) =>{
+    const getItemProd = new Promise ( (resolve) =>{
         setTimeout( () =>{
-            const mockProd = [
+            const mockProd =
                 {id: 1, titulo: "Camiseta Eslovenia", descripcion: "Titular", precio: 9000 ,img: <img src="/img/Camis1.jpg" alt="C1" />}
-           ] 
+            
             resolve(mockProd)
-        },2000)
+        },2000);
     }
     )
 
     useEffect( () =>{
-        getProd.then ((res) =>{
-        setProd(res)
+        getItemProd.then ((res) =>{
+        setInfoProd(res)
         })
     },[]
     )
 
+    return (
 
-return <ItemDetail items={prod} />;
+        <div class="detail-conteiner">
+<ItemDetail data={infoProd}/>
+        </div>
+    )
+}
 
- 
- };
-
- export default ItemDetailConteiner
+export default ItemDetailConteiner

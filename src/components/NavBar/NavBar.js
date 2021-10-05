@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const NavBar =() => {
   return (
@@ -17,7 +18,10 @@ const NavBar =() => {
       <Typography variant="h6">
         News
       </Typography>
-      <Button color="inherit">Login</Button>
+      <Button>Inicio</Button>
+      <Link to="/"><Button>Home</Button></Link>
+      <Link to="/Contacto"><Button>Contacto</Button></Link>
+      <Link to="/PageProd"><Button>Productos</Button></Link>
       <div className ="cart">
         <Button><CartWidget/>
         </Button>
