@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item } from './Item';
 import ItemCount from './ItemCount';
+import Producto from './Product';
 
 
 export const ItemList = ({ items }) => {
@@ -9,7 +10,8 @@ return (
       {items.map((item) => (
         <>
               <Item item={item} />
-              <ItemCount stock = "5" initial = "1" />
+              <Producto nombre = {item.nombre}/>
+              <ItemCount stock = "5" initial = "1" />     
         </>
       ))}
     </ul>

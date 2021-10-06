@@ -3,9 +3,9 @@ import { useParams } from "react-router";
 import ItemDetailConteiner from "../components/Product/ItemDetailConteiner";
 
 export default function PageProd() {
-const {idProduct} = useParams()
+const {id} = useParams()
     return(
-        <><p>Id de producto = {idProduct}</p>
+        <><p>Id de producto = {id}</p>
         <ItemDetailConteiner /></>
 
     )

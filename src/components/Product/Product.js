@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 
 class Product extends React.Component{
@@ -11,11 +12,11 @@ class Product extends React.Component{
     }
 }
 
-const Producto = (props) => {
+const Producto = (item) => {
     return (            
     <div>
-        Nombre: {props.nombre} <br/>
-        Apellido:  {props.apellido}
+        <br/>
+        <Button>Detalle de {item.nombre} </Button>
     </div>)
 }
 

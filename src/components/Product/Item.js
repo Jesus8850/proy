@@ -7,6 +7,8 @@ export const Item = ({ item }) => {
     <br/>
     Articulo:  {item.titulo}
     <br/>
+    Categoria:  {item.categoria}
+    <br/>
     Descripcion: {item.descripcion}
     <br/>
     Precio $:  {item.precio}

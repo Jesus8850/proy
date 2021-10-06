@@ -6,6 +6,7 @@ import NotFoundPage from "../Pages/NotFoundPage";
 import Home from "../Pages/Home";
 import PageProd from "../Pages/PageProd";
 import NavBar from "../components/NavBar/NavBar";
+import Categoria from "../Pages/Categoria";
 
 export default function AppRouter(){
 
@@ -14,8 +15,9 @@ export default function AppRouter(){
         <NavBar/>
         <Switch>
         <Route path = '/contacto' component = {Contacto}/>
-        <Route path = '/pageprod' component = {PageProd}/>
+        <Route path = '/pageprod/:id' component = {PageProd}/>
         <Route exact path = '/'component = {Home}/>
+        <Route path = '/categoria/:idcat' component = {Categoria}/>
         <Route path = '*' component = {NotFoundPage}/>
 
         </Switch>

@@ -22,6 +22,9 @@ const NavBar =() => {
       <Link to="/"><Button>Home</Button></Link>
       <Link to="/Contacto"><Button>Contacto</Button></Link>
       <Link to="/PageProd"><Button>Productos</Button></Link>
+      <Button>Product</Button>
+      <Link to={"/categoria/${idCategoria}"}></Link>
+      <Link to="/categoria/camisetas"><Button>Camisetas</Button></Link>
       <div className ="cart">
         <Button><CartWidget/>
         </Button>
