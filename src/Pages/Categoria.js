@@ -1,9 +1,11 @@
 import React from "react";
+import { useParams } from "react-router";
+import ItemListConteiner from "../components/Product/ItemListConteiner";
 
 export default function Categoria() {
-
+    const {idcat} = useParams()
     return(
-<h3>Pantalla Contacto </h3>
+        <><p>Id de Cat = {idcat}</p><ItemListConteiner /></>
 
     )
 }
