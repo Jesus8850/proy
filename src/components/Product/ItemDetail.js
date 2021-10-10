@@ -1,20 +1,23 @@
 import React,{useState, useEffect} from "react";
 
+import { Item } from './Item';
+import ItemCount from './ItemCount';
+import Producto from './Product';
 
-function ItemDetail (props) {
+
+export const ItemDetail =( {props} ) => {
 
     return (
 
-        <div className = "item-detail">
-            Entra al detalle de Item
-            {console.log("detalle ", props.data)}
-            <div>
-            <p>Precio: {props.precio}</p>
-            </div>
-            
-        </div>
+        <ul>
+        {props.map((item) => (
+          <>
+                <Item item={props} />
+                <Producto nombre = {props.nombre}/>
+                <ItemCount stock = "5" initial = "1" />     
+          </>
+        ))}
+      </ul>
 
-    )
+ )
 }
-
-export default ItemDetail

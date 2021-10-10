@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 export const Item = ({ item }) => {
 
@@ -12,6 +14,8 @@ export const Item = ({ item }) => {
     Descripcion: {item.descripcion}
     <br/>
     Precio $:  {item.precio}
+    <br/>
+    <Link to={"/PageProd/"}><Button>Ver Detalle</Button></Link> 
     <br/><br/>
 </div>);
 };

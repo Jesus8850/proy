@@ -15,8 +15,6 @@ class Product extends React.Component{
 const Producto = (item) => {
     return (            
     <div>
-        <br/>
-        <Button>Detalle de {item.nombre} </Button>
     </div>)
 }
 

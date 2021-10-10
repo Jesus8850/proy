@@ -16,13 +16,13 @@ const NavBar =() => {
     <AppBar position="static">
     <Toolbar>
       <Typography variant="h6">
-        News
+      <Link to="/"><Button>Home</Button></Link>
       </Typography>
       <Button>Inicio</Button>
-      <Link to="/"><Button>Home</Button></Link>
       <Link to="/Contacto"><Button>Contacto</Button></Link>
       <Link to="/PageProd"><Button>Productos</Button></Link>
       <Link to="/categoria/camiseta"><Button>Camisetas</Button></Link>
+      <Link to="/categoria/short"><Button>Short</Button></Link>
       <div className ="cart">
         <Button><CartWidget/>
         </Button>
