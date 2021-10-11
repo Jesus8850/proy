@@ -15,7 +15,8 @@ export const Item = ({ item }) => {
     <br/>
     Precio $:  {item.precio}
     <br/>
-    <Link to={"/PageProd/"}><Button>Ver Detalle</Button></Link> 
+    <Link to={`/PageProd/${item.id}`}><Button>Ver Detalle</Button></Link> 
     <br/><br/>
 </div>);
 };
+

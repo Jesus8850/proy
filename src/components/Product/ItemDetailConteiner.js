@@ -17,6 +17,7 @@ function ItemDetailConteiner () {
                  precio: 9000,
                  img: <img src="/img/Camis1.jpg" alt="C1" />,
                  categoria: "camiseta",
+                 stock:10,
               },
               {
                  id: "2",
@@ -25,6 +26,7 @@ function ItemDetailConteiner () {
                  precio: 11500,
                  img: <img src="/img/Camis2.jpg" alt="C2" />,
                  categoria: "camiseta",
+                 stock:10,
               },
               {
                  id: "3",
@@ -33,6 +35,7 @@ function ItemDetailConteiner () {
                  precio: 1400,
                  img: <img src="/img/Short1.jpg" alt="S1" />,
                  categoria: "short",
+                 stock:10,
               },
            ];
            resolve(mockProd)
