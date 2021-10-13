@@ -1,28 +1,29 @@
 import React,{useState} from 'react';
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ onAdd, onLess, initial }) => {
 
-    const [stockF,setStock] = useState(0);
+    //const [stockF,setStock] = useState(0);
 
 
-    const agregar = () =>{
-        if (stockF < Number(stock)){
-        setStock(stockF + 1)
-        }
-    }
+    //const agregar = () =>{
+    //    if (stockF < Number(stock)){
+    //    setStock(stockF + 1)
+    //    }
+    //}
     
-    const sacar = () =>{
-        if (stockF > Number(initial)){
-            setStock(stockF - 1)
-            }
-    }
+    //const sacar = () =>{
+    //    if (stockF > Number(initial)){
+    //        setStock(stockF - 1)
+    //        }
+    //}
     return (
         <>
         <div>
-            <button onClick={agregar}>Agregar</button>
-            <button onClick={sacar}>Quitar</button>
+            <button onClick={onAdd}>Agregar</button>
             <br/>
-            <h2>{stockF}</h2>
+            <button onClick={onLess}>Quitar</button>
+            <br/>
+            <h2>{initial}</h2>
         </div>
          </>
          );

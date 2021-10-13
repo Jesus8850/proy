@@ -11,7 +11,7 @@ return (
         <>
               <Item item={item} />
               <Producto nombre = {item.nombre}/>
-              <ItemCount stock = "5" initial = "1" />     
+                  
         </>
       ))}
     </ul>
