@@ -6,13 +6,14 @@ import ItemListConteiner from './components/Product/ItemListConteiner';
 import ItemCount from './components/Product/ItemCount';
 import ItemDetailConteiner from './components/Product/ItemDetailConteiner';
 import AppRouter from './AppRouter/AppRouter';
-
+import CartContext from './context/CartContext';
 
 function App() {
   return (
       <>
+<CartContext.Provider value={{cache:[]}}>
 <AppRouter/>
-
+</CartContext.Provider>
       </>
   );
 }
