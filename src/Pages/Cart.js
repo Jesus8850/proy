@@ -11,7 +11,4 @@ export default function Cart() {
         <p>Id de producto = {id}</p>
         </>
     )
-}
-
-
-
+};

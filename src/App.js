@@ -10,12 +10,10 @@ import CartContext from './context/CartContext';
 
 function App() {
   return (
-      <>
-<CartContext.Provider value={{cache:[]}}>
-<AppRouter/>
-</CartContext.Provider>
-      </>
-  );
+<CartContext.Provider value = {{cache: []}}>
+  < AppRouter/>
+  </CartContext.Provider>
+  )
 }
 
 export default App;

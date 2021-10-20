@@ -1,11 +1,14 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useContext} from "react";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
+import Context from "../../context/CartContext";
 
 function ItemListConteiner () {
 
     const { idcat } = useParams();   // traes la propiedad catId, que es la que definiste en tu url como :catId
     const [prod, setProd] = useState([])
+
+    const ContextData = useContext(Context);
 
     const getProd = new Promise ( (resolve) =>{
         setTimeout( () =>{
@@ -41,6 +44,7 @@ function ItemListConteiner () {
         });
      }, [idcat]);
   
+console.log("contexto array", ContextData);
 
 return <ItemList items={prod} />;
 

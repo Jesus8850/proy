@@ -1,10 +1,17 @@
 
 import ItemCount from "./ItemCount";
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
+import CartContext from "../../context/CartContext";
+import Counter from "./Counter";
 
 export const ItemDetail = ({ data }) => {
     const [stockF,setStock] = useState(3);
     const [itemF,setItemF] = useState(0);
+
+    //const {precio, stock} = data
+    const {addItem, removeItem} = useContext(CartContext)
+
+    const handleOnAdd = count => addItem(data, count)
 
     const onAdd = () =>{
         if(itemF < stockF){
@@ -18,12 +25,16 @@ export const ItemDetail = ({ data }) => {
         }
     }
 
+
    return (
       <ul>
          <>
             {data?.img}
             <p>$ {data?.precio}</p>
             <ItemCount onAdd ={onAdd} onLess ={onLess} initial={itemF} />
+            <div>
+            
+            </div>
          </>
       </ul>
    );
