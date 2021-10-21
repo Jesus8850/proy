@@ -33,8 +33,8 @@ export const ItemDetail = ({ data }) => {
             <p>$ {data?.precio}</p>
             <ItemCount onAdd ={onAdd} onLess ={onLess} initial={itemF} />
             <div>
-            
-            </div>
+        <Counter stock={data?.precio} onAdd={handleOnAdd} /> 
+      </div>
          </>
       </ul>
    );

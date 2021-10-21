@@ -7,7 +7,7 @@ const CartProvider = ({children}) => {
 const[carta, setCarta] = useState([])
 
 
-const data = (cartItems,removeItem,addItem)
+
 
 
   const [cartItems, setCartItems] = useState([])
@@ -15,7 +15,7 @@ const data = (cartItems,removeItem,addItem)
   const [price, setPrice] = useState(0)
       
   // * Agrego un item al carrito.
-  const addItem = (item, count) => {
+  function addItem (item, count) {
     let cartElement = {item, count}
     let cartAux = []
     if (isInCart(item)) {
@@ -27,6 +27,8 @@ const data = (cartItems,removeItem,addItem)
     }
     setCartItems(cartAux)
   }
+
+  console.log("trae cart context ", cartItems)
 
   // * Reviso si el item esta en el carrito.
   const isInCart = (item) => {
@@ -43,6 +45,7 @@ const removeItem = (item) => {
     } 
   }
 
+  const data = {cartItems,removeItem,addItem}
 
 return(
     <CartContext.Provider value = {data}>
@@ -51,5 +54,5 @@ return(
 )
 }
 
-export {CartContext}
+export {CartProvider}
 export default CartContext;
