@@ -8,6 +8,19 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    background-color: aqua;
+  }
+  .botoncito {
+    width: 140px;  
+    padding: 20px;
+    height:270px;
+    margin-top:50px;
+    right:0px;
+    position:fixed; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color:blue;
   }
 
   .main2 {

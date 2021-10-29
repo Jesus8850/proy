@@ -12,7 +12,7 @@ const Counter = ({stock, initial = 0, onAdd}) => {
 				<button disabled={stock === 0 || count >= stock } onClick={() => setCount(count + 1)}>+</button>
 			</div>
 			<button disabled={stock === 0 || count <= 0 || count > stock} onClick={() => onAdd(count)}>Agregar al carrito</button>
-			<CartWidget show={valida}></CartWidget>
+			
 			<span className="total-stock">Stock: {stock - count}</span>
 		</div>
 	)
