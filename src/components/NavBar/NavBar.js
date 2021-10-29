@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import Cart1 from '../../Pages/Cart1';
 
 const NavBar =() => {
   return (
@@ -24,7 +25,7 @@ const NavBar =() => {
       <Link to="/categoria/camiseta"><Button>Camisetas</Button></Link>
       <Link to="/categoria/short"><Button>Short</Button></Link>
       <div className ="cart">
-        <Button><CartWidget/>
+        <Button><Cart1/>
         </Button>
         </div>
         

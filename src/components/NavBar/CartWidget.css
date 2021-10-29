@@ -1,0 +1,29 @@
+.main {
+    width: 140px;  
+    padding: 20px;
+    height:270px;
+    margin-top:50px;
+    right:0px;
+    position:fixed; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .main2 {
+    width: 0px;  
+    padding: 0px;
+    height:0px;
+    margin-top:0px;
+    right:0px;
+    position:fixed; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+
+  .barrita {
+    margin-left: auto; 
+    margin-right: 0;
+  }

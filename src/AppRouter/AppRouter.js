@@ -8,10 +8,12 @@ import PageProd from "../Pages/PageProd";
 import NavBar from "../components/NavBar/NavBar";
 import Categoria from "../Pages/Categoria";
 import Cart from "../Pages/Cart";
+import { CartProvider } from "../context/CartContext";
 
 export default function AppRouter(){
 
     return(
+        <CartProvider>
         <BrowserRouter>
         <NavBar/>
         <Switch>
@@ -26,6 +28,6 @@ export default function AppRouter(){
         
         </BrowserRouter>
 
-
+        </CartProvider>
     )
 }

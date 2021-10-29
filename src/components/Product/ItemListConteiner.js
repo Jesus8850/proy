@@ -3,6 +3,7 @@ import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 import Context from "../../context/CartContext";
 
+
 function ItemListConteiner () {
 
     const { idcat } = useParams();   // traes la propiedad catId, que es la que definiste en tu url como :catId

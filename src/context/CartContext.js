@@ -6,11 +6,8 @@ const CartProvider = ({children}) => {
 
 const[carta, setCarta] = useState([])
 
-
-
-
-
   const [cartItems, setCartItems] = useState([])
+  const [products, setProducts] = useState([])
   const [total, setTotal] = useState(0)
   const [price, setPrice] = useState(0)
       

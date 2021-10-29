@@ -3,6 +3,7 @@ import ItemCount from "./ItemCount";
 import React,{useState, useContext} from 'react';
 import CartContext from "../../context/CartContext";
 import Counter from "./Counter";
+import CartWidget from "../NavBar/CartWidget";
 
 export const ItemDetail = ({ data }) => {
     const [stockF,setStock] = useState(3);
@@ -31,11 +32,17 @@ export const ItemDetail = ({ data }) => {
          <>
             {data?.img}
             <p>$ {data?.precio}</p>
-            <ItemCount onAdd ={onAdd} onLess ={onLess} initial={itemF} />
+            
             <div>
-        <Counter stock={data?.precio} onAdd={handleOnAdd} /> 
+        <Counter stock={data?.stock} onAdd={handleOnAdd} />
+        <CartWidget data={data}></CartWidget>
       </div>
          </>
       </ul>
    );
+   
 };
+
+console.log()
+
+//<ItemCount onAdd ={onAdd} onLess ={onLess} initial={itemF} />
