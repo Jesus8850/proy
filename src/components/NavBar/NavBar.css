@@ -3,3 +3,16 @@
     color: black;
     border: 2px solid #4CAF50; /* Green */
   }
+
+
+  .cart-button {
+    width: 40px;  
+    padding: 40px;
+    height:40px;
+    margin-top:20px;
+    right:20px;
+    position:fixed; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }

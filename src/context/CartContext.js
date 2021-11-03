@@ -34,12 +34,15 @@ const[carta, setCarta] = useState([])
   }
 
 const removeItem = (item) => {
-    if (isInCart(item)) {
+  console.log("quiere eliminar ", item.id)
+//    if (isInCart(item)) {
+      console.log("elimina ", item.id)
       // 1. FILTRO mi carrito para obtener el resto de los items.
       const cartElements = cartItems.filter(element => element.item.id !== item.id) || []
       // 2. actualizo el carrito, si solo tenia un elemento lo inicializo como []
       setCartItems([...cartElements])
-    } 
+      console.log("los items son ", cartItems)
+ //   } 
   }
 
   const data = {cartItems,removeItem,addItem}

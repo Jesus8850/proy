@@ -17,9 +17,8 @@ const Cart1 = () => {
     return (  
     <div>
     <button onClick={handlecart}>
-    <FontAwesomeIcon icon={faShoppingCart}/>  
+    <FontAwesomeIcon icon={faShoppingCart}/> </button> 
     <CartWidget show={showCart} close ={handlecart} />
-    </button>
     </div> 
     )
 }

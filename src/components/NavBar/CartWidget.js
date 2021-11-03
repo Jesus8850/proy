@@ -17,10 +17,8 @@ const CartWidget = ({show, close, data}) => {
         console.log("entra al main1 es ", show)
     return (  
     <CartProvider> 
-     <div className = "botoncito">
-        <button onClick={close}>X</button> 
-    </div>
     <div className = "main">
+    <button onClick={close}>X</button>
     <br/>
     <div>
     {cartItems.map(element => <MiniProduct {...element} />)}

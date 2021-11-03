@@ -24,12 +24,12 @@ const NavBar =() => {
       <Link to="/PageProd"><Button>Productos</Button></Link>
       <Link to="/categoria/camiseta"><Button>Camisetas</Button></Link>
       <Link to="/categoria/short"><Button>Short</Button></Link>
-      <div className ="cart">
-        <Button><Cart1/>
-        </Button>
+
+      <div className ="cart-button">
+      <Button><Cart1/>
+      </Button>
         </div>
-        
-    </Toolbar>
+        </Toolbar>
   </AppBar>
 
   );
