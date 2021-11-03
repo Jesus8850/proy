@@ -2,12 +2,14 @@ import React,{useState, useEffect, useContext} from "react";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 import Context from "../../context/CartContext";
-
+import db from "../../firebase";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 function ItemListConteiner () {
 
     const { idcat } = useParams();   // traes la propiedad catId, que es la que definiste en tu url como :catId
     const [prod, setProd] = useState([])
+    const [prodFire, setProdFire] = useState([])
 
     const ContextData = useContext(Context);
 
@@ -23,6 +25,7 @@ function ItemListConteiner () {
     }
     )
 
+
     //useEffect( () =>{
     //    getProd.then ((res) =>{
      //   setProd(res)
@@ -37,6 +40,7 @@ function ItemListConteiner () {
     // }, []);
 
 
+    //funciona
      useEffect(() => {
         getProd.then((res) => {
            idcat
@@ -44,10 +48,24 @@ function ItemListConteiner () {
               : setProd(res);
         });
      }, [idcat]);
-  
-console.log("contexto array", ContextData);
 
-return <ItemList items={prod} />;
+////////////////////////////////////////////////////////////////////////////////////////
+
+     async function getPrd(db) {
+        const productsCol = collection(db, 'productos');
+        const prodSnap = await getDocs (productsCol);
+        const prodList = prodSnap.docs.map(doc => doc.data());
+        setProdFire(prodList);
+        return prodList;
+    }
+
+    useEffect(() => {
+        getPrd(db)
+        },[])
+  
+
+
+return <ItemList items={prodFire} />;
 
  
  };

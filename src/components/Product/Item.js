@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 export const Item = ({ item }) => {
 
   return (<div>
-    {item.img}
+    <img src={`/img/${item.img}`} alt="C1" />
     <br/>
     Articulo:  {item.titulo}
     <br/>

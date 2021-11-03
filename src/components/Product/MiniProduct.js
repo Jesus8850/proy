@@ -13,7 +13,6 @@ const MiniProduct = ({item, count}) => {
     <><br />
     <div className ="mini">
         <br />
-        <CartWidget></CartWidget>
           <p>{titulo} | {count}u. x ${precio}</p>
           <button onClick={() => removeItem(item)}>Quitar</button>
           <br />
