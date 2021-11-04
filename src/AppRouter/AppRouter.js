@@ -13,7 +13,7 @@ import { CartProvider } from "../context/CartContext";
 export default function AppRouter(){
 
     return(
-        <CartProvider>
+
         <BrowserRouter>
         <NavBar/>
         <Switch>
@@ -28,6 +28,5 @@ export default function AppRouter(){
         
         </BrowserRouter>
 
-        </CartProvider>
     )
 }

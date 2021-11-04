@@ -45,7 +45,31 @@ const removeItem = (item) => {
  //   } 
   }
 
-  const data = {cartItems,removeItem,addItem}
+  const removeOneItem = item => {
+    if (isInCart(item)) {
+      // 1. BUSCO el producto por el id.
+      let cartElement = cartItems.find(element => element.item.id === item.id)
+      if (cartElement.count === 1) {
+        // 1.a. Si solo tengo un elemento lo remuevo con la funcion removeItem()
+        removeItem(item)
+      } else {
+        // 1.a. Creo una copia de mi carrito
+        let cart = cartItems
+        // 1.b. Mapeo el carrito
+        cart.map(element => {
+          // 1.c. Resto 1 al contador
+          if (element.item.id === item.id) {
+            element.count = element.count - 1
+          }
+          return element
+        })
+        // 1.d. actualizo el carrito.
+        setCartItems([...cart])
+      }
+    } 
+  }
+
+  const data = {cartItems,removeItem,addItem,removeOneItem}
 
 return(
     <CartContext.Provider value = {data}>

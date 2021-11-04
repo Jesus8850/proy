@@ -16,7 +16,6 @@ const CartWidget = ({show, close, data}) => {
     if (show == true) {
         console.log("entra al main1 es ", show)
     return (  
-    <CartProvider> 
     <div className = "main">
     <button onClick={close}>X</button>
     <br/>
@@ -25,7 +24,6 @@ const CartWidget = ({show, close, data}) => {
     </div>
     <br/>
     </div>
-    </CartProvider>
     )
 }else{
     console.log("entra al main2 es ", show)
