@@ -1,6 +1,6 @@
 import React,{useState, useEffect, useContext} from "react";
 import CartContext from "../context/CartContext";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "../firebase"
 import db from "../firebase";
 
 export default function Contacto() {
@@ -18,9 +18,15 @@ export default function Contacto() {
         productos: cartItems
     }
 
-    const agregaOrden = async(generarOrden) =>{
-        const orderFirebase = collection(db,'orders');
-        const order = await addDoc(orderFirebase,generarOrden)
+    console.log("entra a ver en cartit", generarOrden)
+
+    const AddOrder = () => {
+        agregaOrden(generarOrden)
+    }
+
+    const agregaOrden = async(genera) =>{
+        const orderFirebase = collection(db,'orders')
+        const order = await addDoc(orderFirebase,genera)
     }
 
     return(
@@ -62,7 +68,7 @@ export default function Contacto() {
 </fieldset>
 -------------------------------------------------
 <fieldset>
-<button onClick={agregaOrden}>Confirmar pedido</button>
+<button onClick={AddOrder}>Confirmar pedido</button>
 </fieldset>
 </form>
 
