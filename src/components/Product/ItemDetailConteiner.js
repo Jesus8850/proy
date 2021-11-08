@@ -15,7 +15,7 @@ function ItemDetailConteiner () {
                  titulo: "Camiseta Eslovenia",
                  descripcion: "Titular",
                  precio: 9000,
-                 img: <img src="/img/Camis1.jpg" alt="C1" />,
+                 img: "camiseta",
                  categoria: "camiseta",
                  stock:10,
               },
