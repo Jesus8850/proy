@@ -1,6 +1,27 @@
-import React from "react";
+import React,{useState, useEffect, useContext} from "react";
+import CartContext from "../context/CartContext";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import db from "../firebase";
 
 export default function Contacto() {
+
+    const {cartItems,handleTotalPrice,handleTotal,total,price} = useContext(CartContext)
+
+    const generarOrden ={
+        buyer:{
+            mail: "fsdfs",
+            nombre: "dfssfd",
+            nomtar: "fsdfsdsdf",
+            numtar: "fdsfsdf",
+            tel: "sfsdfds"
+        },
+        productos: cartItems
+    }
+
+    const agregaOrden = async(generarOrden) =>{
+        const orderFirebase = collection(db,'orders');
+        const order = await addDoc(orderFirebase,generarOrden)
+    }
 
     return(
 <form id="pago">
@@ -41,7 +62,7 @@ export default function Contacto() {
 </fieldset>
 -------------------------------------------------
 <fieldset>
-<button type="submit">Confirmar pedido</button>
+<button onClick={agregaOrden}>Confirmar pedido</button>
 </fieldset>
 </form>
 

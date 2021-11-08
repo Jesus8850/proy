@@ -3,9 +3,9 @@ import React from "react";
 export default function Contact() {
 
     return(
-<form id="pago">
+<form id="consulta">
 <fieldset>
-<legend>Datos del comprador</legend>
+<legend>Datos del usuario</legend>
 <ol>
 <li>
 <label for="Nombre: ">Nombre</label>

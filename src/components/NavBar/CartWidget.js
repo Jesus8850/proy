@@ -28,7 +28,7 @@ const CartWidget = ({show, close, data}) => {
             <br />
         </div>
         <div className="totales">
-            <Link to="/Contacto"><Button>TERMINAR COMPRA</Button></Link>
+            <Link to="/contacto"><Button>TERMINAR COMPRA</Button></Link>
         </div></>
 
     )
