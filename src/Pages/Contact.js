@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Contacto() {
+export default function Contact() {
 
     return(
 <form id="pago">
@@ -22,26 +22,16 @@ export default function Contacto() {
 <input type="text" id="telefono" name="telefono" type="tel" placeholder="Ej. +5411xxxxxxxxx" required>
 </input>
 </li>
-</ol>
-</fieldset>
-<fieldset>
-<legend>Datos de tarjeta de crédito o débito</legend>
-<ol>
 <li>
-<label for="numtarjeta">Número</label>
-<input type="text" id="numtarjeta" name="numtarjeta" type="number" placeholder="Ej. 5555-4444-3333-2222" required>
-</input>
-</li>
-<li>
-<label for="nomtarjeta">Nombre Tarjeta</label>
-<input type="text" id="nomtarjeta" name="nomtarjeta" type="text" placeholder="Nombre que figura en la tarjeta" required>
+<label for="Consulta: ">Consulta</label>
+<input type="text" required>
 </input>
 </li>
 </ol>
 </fieldset>
 -------------------------------------------------
 <fieldset>
-<button type="submit">Confirmar pedido</button>
+<button type="submit">Enviar Consulta</button>
 </fieldset>
 </form>
 

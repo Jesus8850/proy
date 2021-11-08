@@ -1,4 +1,4 @@
-import React, {createContext,useState} from "react";
+import React, {createContext,useState,useEffect} from "react";
 
 const CartContext = createContext();
 
@@ -10,6 +10,12 @@ const[carta, setCarta] = useState([])
   const [products, setProducts] = useState([])
   const [total, setTotal] = useState(0)
   const [price, setPrice] = useState(0)
+
+
+  useEffect(() => {
+    setTotal(handleTotal())
+    setPrice(handleTotalPrice())
+  }, [cartItems])
       
   // * Agrego un item al carrito.
   function addItem (item, count) {
@@ -69,7 +75,58 @@ const removeItem = (item) => {
     } 
   }
 
-  const data = {cartItems,removeItem,addItem,removeOneItem}
+
+  // * BONUS: Mapeo carrito obtengo precio total
+  const handleTotalPriceByItem = () => {
+    // 1. Creo una copia del carrito donde trabajar
+    let newCartItems = cartItems
+    // 2. Mapeo mi array y lo actualizo
+    const test = newCartItems.map(element => {
+      // 3. Retorno un objeto con el elemento + el total de ese producto
+      return {
+        ...element,
+        price: element.item.precio * element.count
+      }
+    })    
+    console.log(`test`, test)
+    return test
+  }
+
+  // * BONUS: Obtengo el total de elementos del carrito
+  const handleTotal = () => {  
+    // 1. Inicializo el reduce
+    const initialValue = 0
+    return (
+      cartItems &&
+      cartItems.reduce(
+        (accumulator, currentValue) => {          
+          // 2. Acumulo el total
+          return accumulator + currentValue.count                              
+        },
+        initialValue
+      )    
+    )
+  }
+
+  // * BONUS: Obtengo el precio total del carrito
+  const handleTotalPrice = () => {
+    // 1. Creo un carrito auxiliar con el precio total por producto.
+    const cartAux = handleTotalPriceByItem()
+    // 2. Inicializo el reduce
+    const initialValue = 0
+    return (
+      cartAux &&
+      cartAux.reduce(
+        (accumulator, currentValue) => {          
+          // 3. Acumulo el total
+          return accumulator + currentValue.price                              
+        },
+        initialValue
+      )    
+    )
+  }
+
+  const data = {cartItems,removeItem,addItem,removeOneItem,handleTotalPrice,handleTotal,total,price}
 
 return(
     <CartContext.Provider value = {data}>

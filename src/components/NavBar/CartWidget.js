@@ -4,26 +4,33 @@ import React, { useContext } from "react";
 import { CartProvider } from '../../context/CartContext';
 import CartContext from "../../context/CartContext";
 import MiniProduct from '../Product/MiniProduct';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const CartWidget = ({show, close, data}) => {
 
     console.log("valor es ", data?.precio)
 
-    const {cartItems} = useContext(CartContext)
+    const {cartItems,handleTotalPrice,handleTotal,total,price} = useContext(CartContext)
 
     console.log("valor desde cart context ", cartItems.item)
 
     if (show == true) {
         console.log("entra al main1 es ", show)
     return (  
-    <div className = "main">
-    <button onClick={close}>X</button>
-    <br/>
-    <div>
-    {cartItems.map(element => <MiniProduct {...element} />)}
-    </div>
-    <br/>
-    </div>
+        <><div className="main">
+            <br />
+            <button onClick={close}>X</button>
+            <br />
+            <div>
+                {cartItems.map(element => <MiniProduct {...element} />)}
+            </div>
+            <br />
+        </div>
+        <div className="totales">
+            <Link to="/Contacto"><Button>TERMINAR COMPRA</Button></Link>
+        </div></>
+
     )
 }else{
     console.log("entra al main2 es ", show)

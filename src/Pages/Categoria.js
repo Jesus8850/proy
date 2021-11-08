@@ -5,7 +5,7 @@ import ItemListConteiner from "../components/Product/ItemListConteiner";
 export default function Categoria() {
     const {idcat} = useParams()
     return(
-        <><p>Id de Cat = {idcat}</p><ItemListConteiner /></>
+        <><ItemListConteiner /></>
 
     )
 }

@@ -33,11 +33,11 @@ function ItemListConteiner () {
     //},[]
     //)
 
-    //useEffect(() => {
-    //    getProd.then((res) => {
-    //        idcat ? setProd(res.filter(i => i.categoria === idcat)) : setProd(res);
-    //    });
-    // }, []);
+   // useEffect(() => {
+   //     getProd.then((res) => {
+   //         idcat ? setProd(res.filter(i => i.categoria === idcat)) : setProd(res);
+   //     });
+   //  }, []);
 
 
     //funciona
@@ -53,11 +53,24 @@ function ItemListConteiner () {
 
      async function getPrd(db) {
         const productsCol = collection(db, 'productos');
+        //const prodcols = productsCol.where('categoria','==','camiseta')
         const prodSnap = await getDocs (productsCol);
         const prodList = prodSnap.docs.map(doc => doc.data());
         setProdFire(prodList);
         return prodList;
     }
+
+    //async function getCat(db) {
+    //    const prodxcat = collection(db, 'productos');
+    //    const prodcols = prodxcat.where('categoria','==','camiseta')
+        //const prodSnap = await getDocs (productsCol);
+
+    //    prodcols.get().then((QuerySnapshot) => {
+    //        const prodList = QuerySnapshot.docs.map(doc => doc.data());
+    //        setProdFire(prodList);
+    //        return prodList;
+    //    })
+    //}
 
     useEffect(() => {
         getPrd(db)

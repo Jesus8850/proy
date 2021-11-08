@@ -6,11 +6,11 @@
 
 
   .cart-button {
-    width: 40px;  
-    padding: 40px;
-    height:40px;
+    width: 0px;  
+    padding: 150px;
+    height:50px;
     margin-top:20px;
-    right:20px;
+    right:60px;
     position:fixed; 
     display: flex;
     align-items: flex-start;
