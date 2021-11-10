@@ -19,13 +19,6 @@ var vnumtar = document.getElementById("numtarjeta").value
 var vtel = document.getElementById("telefono").value
 var vmailconf = document.getElementById("emailconf").value
 
-console.log ("el nombre es: ", vnombre)
-console.log ("el mail es: ", vmail)
-console.log ("el nom tar es: ", vnomtar)
-console.log ("el tel es: ", vtel)
-console.log ("el conf email es: ", vmailconf)
-
-if (document.getElementById("telefono").value != null && document.getElementById("telefono").value != ""){
 
 if (vmail == vmailconf) {
 
@@ -51,10 +44,6 @@ if (vmail == vmailconf) {
 }else{
     alert("LOS MAILS NO COINCIDEN")
 }
-}else{
-
-    alert("SE DEBEN COMPLETAR TODOS LOS CAMPOS")
-}
 
 }
 
@@ -72,17 +61,17 @@ if (vmail == vmailconf) {
 </li>
 <li>
 <label for="email: ">Email</label>
-<input type="text" id="email" name="email" type="text">
+<input type="email" id="email" name="email" placeholder="Escribe tu e mail" required autofocus>
 </input>
 </li>
 <li>
 <label for="confirmar email: ">Confirmar Email</label>
-<input type="text" id="emailconf" name="emailconf" type="text">
+<input type="email" id="emailconf" name="emailconf" placeholder="Confirma tu e mail" required autofocus>
 </input>
 </li>
 <li>
 <label for="telefono: ">Teléfono</label>
-<input type="text" id="telefono" name="telefono" type="text">
+<input type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" required autofocus>
 </input>
 </li>
 </ol>
@@ -92,12 +81,12 @@ if (vmail == vmailconf) {
 <ol>
 <li>
 <label for="nomtarjeta">Nombre Tarjeta</label>
-<input type="text" id="nomtarjeta" name="nomtarjeta" type="text">
+<input type="text" id="nomtarjeta" name="nomtarjeta" placeholder="nombre tarjeta" required autofocus>
 </input>
 </li>
 <li>
 <label for="numtarjeta">Numero Tarjeta</label>
-<input type="text" id="numtarjeta" name="numtarjeta" type="text">
+<input type="text" id="numtarjeta" name="numtarjeta" placeholder="numero tarjeta" required autofocus>
 </input>
 </li>
 </ol>
