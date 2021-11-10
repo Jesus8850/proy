@@ -23,9 +23,6 @@ const NavBar =() => {
       <Typography variant="h6">
       <Link to="/"><Button>Home</Button></Link>
       </Typography>
-      <Button>Inicio</Button>
-      <Link to="/Contacto"><Button>Contacto</Button></Link>
-      <Link to="/PageProd"><Button>Productos</Button></Link>
       <Link to="/categoria/camiseta"><Button>Camisetas</Button></Link>
       <Link to="/categoria/short"><Button>Short</Button></Link>
 

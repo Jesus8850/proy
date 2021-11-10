@@ -7,7 +7,7 @@ import { Item } from './Item';
 
 const MiniProduct = ({item, count}) => {
   const {titulo, precio, id} = item
-  const {addItem, removeItem,removeOneItem,handleTotalPrice,handleTotal} = useContext(CartContext)
+  const {removeItem,removeOneItem} = useContext(CartContext)
 
   return (
     <><br />

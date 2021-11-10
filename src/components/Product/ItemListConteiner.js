@@ -3,7 +3,7 @@ import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 import Context from "../../context/CartContext";
 import db from "../../firebase";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 function ItemListConteiner () {
 
@@ -51,14 +51,27 @@ function ItemListConteiner () {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-     async function getPrd(db) {
-        const productsCol = collection(db, 'productos');
+    // async function getPrd(db) {
+    //    const productsCol = collection(db, 'productos');
+    //    //const prodcols = productsCol.where('categoria','==','camiseta')
+    //    const prodSnap = await getDocs (productsCol);
+    //    const prodList = prodSnap.docs.map(doc => doc.data());
+    //    setProdFire(prodList);
+    //    return prodList;
+    //}
+
+
+    async function getPrd(db) {
+        const productsCol = idcat
+           ? query(collection(db, "productos"), where("categoria", "==", idcat))
+           : collection(db, "productos");
         //const prodcols = productsCol.where('categoria','==','camiseta')
-        const prodSnap = await getDocs (productsCol);
-        const prodList = prodSnap.docs.map(doc => doc.data());
+        const prodSnap = await getDocs(productsCol);
+        const prodList = prodSnap.docs.map((doc) => doc.data());
+        console.log(prodList)
         setProdFire(prodList);
         return prodList;
-    }
+     }
 
     //async function getCat(db) {
     //    const prodxcat = collection(db, 'productos');
@@ -74,7 +87,7 @@ function ItemListConteiner () {
 
     useEffect(() => {
         getPrd(db)
-        },[])
+        },[idcat])
   
 
 

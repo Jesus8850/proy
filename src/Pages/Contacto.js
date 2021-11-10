@@ -5,15 +5,25 @@ import db from "../firebase";
 
 export default function Contacto() {
 
-    const {cartItems,handleTotalPrice,handleTotal,total,price} = useContext(CartContext)
+    const {cartItems} = useContext(CartContext)
+
+
+const AddOrder = () => {
+
+
+var vnombre = document.getElementById("nombre").value
+
+
+console.log("nombre ", vnombre)
+
 
     const generarOrden ={
         buyer:{
-            mail: "fsdfs",
-            nombre: "dfssfd",
-            nomtar: "fsdfsdsdf",
-            numtar: "fdsfsdf",
-            tel: "sfsdfds"
+            mail: "vmail",
+            nombre: vnombre,
+            nomtar: "vnomtar",
+            numtar: "3333-3333333",
+            tel: "vtel"
         },
         productos: cartItems
     }
@@ -23,13 +33,14 @@ export default function Contacto() {
         const order = await addDoc(orderFirebase,generarOrden)
     }
 
-    const AddOrder = () => {
-        agregaOrden(generarOrden)
-    }
+    agregaOrden(generarOrden)
 
-    console.log("entra a ver en cartit", generarOrden)
+}
+
+
     
     return(
+ 
 <form id="pago">
 <fieldset>
 <legend>Datos del comprador</legend>
@@ -41,12 +52,12 @@ export default function Contacto() {
 </li>
 <li>
 <label for="email: ">Email</label>
-<input type="text" id="email" name="email" type="email" placeholder="ejemplo@gmail.ar" required>
+<input type="text" id="email" name="email" type="text">
 </input>
 </li>
 <li>
 <label for="telefono: ">Teléfono</label>
-<input type="text" id="telefono" name="telefono" type="tel" placeholder="Ej. +5411xxxxxxxxx" required>
+<input type="text" id="telefono" name="telefono" type="text">
 </input>
 </li>
 </ol>
@@ -55,13 +66,8 @@ export default function Contacto() {
 <legend>Datos de tarjeta de crédito o débito</legend>
 <ol>
 <li>
-<label for="numtarjeta">Número</label>
-<input type="text" id="numtarjeta" name="numtarjeta" type="number" placeholder="Ej. 5555-4444-3333-2222" required>
-</input>
-</li>
-<li>
 <label for="nomtarjeta">Nombre Tarjeta</label>
-<input type="text" id="nomtarjeta" name="nomtarjeta" type="text" placeholder="Nombre que figura en la tarjeta" required>
+<input type="text" id="nomtarjeta" name="nomtarjeta" type="text">
 </input>
 </li>
 </ol>
