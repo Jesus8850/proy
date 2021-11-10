@@ -8,22 +8,35 @@ export default function Contacto() {
     const {cartItems} = useContext(CartContext)
 
 
-const AddOrder = () => {
+const addOrder = (e) => {
 
+    e.preventDefault()
 
 var vnombre = document.getElementById("nombre").value
+var vmail = document.getElementById("email").value
+var vnomtar = document.getElementById("nomtarjeta").value
+var vnumtar = document.getElementById("numtarjeta").value
+var vtel = document.getElementById("telefono").value
+var vmailconf = document.getElementById("emailconf").value
 
+console.log ("el nombre es: ", vnombre)
+console.log ("el mail es: ", vmail)
+console.log ("el nom tar es: ", vnomtar)
+console.log ("el tel es: ", vtel)
+console.log ("el conf email es: ", vmailconf)
 
-console.log("nombre ", vnombre)
+if (document.getElementById("telefono").value != null && document.getElementById("telefono").value != ""){
 
+if (vmail == vmailconf) {
 
     const generarOrden ={
         buyer:{
-            mail: "vmail",
+            mail: vmail,
+            emailconf: vmailconf,
             nombre: vnombre,
-            nomtar: "vnomtar",
-            numtar: "3333-3333333",
-            tel: "vtel"
+            nomtar: vnomtar,
+            numtar: vnumtar,
+            tel: vtel
         },
         productos: cartItems
     }
@@ -35,13 +48,20 @@ console.log("nombre ", vnombre)
 
     agregaOrden(generarOrden)
 
+}else{
+    alert("LOS MAILS NO COINCIDEN")
+}
+}else{
+
+    alert("SE DEBEN COMPLETAR TODOS LOS CAMPOS")
 }
 
+}
 
     
     return(
  
-<form id="pago">
+<form id="pago" onSubmit={addOrder}>
 <fieldset>
 <legend>Datos del comprador</legend>
 <ol>
@@ -53,6 +73,11 @@ console.log("nombre ", vnombre)
 <li>
 <label for="email: ">Email</label>
 <input type="text" id="email" name="email" type="text">
+</input>
+</li>
+<li>
+<label for="confirmar email: ">Confirmar Email</label>
+<input type="text" id="emailconf" name="emailconf" type="text">
 </input>
 </li>
 <li>
@@ -70,11 +95,16 @@ console.log("nombre ", vnombre)
 <input type="text" id="nomtarjeta" name="nomtarjeta" type="text">
 </input>
 </li>
+<li>
+<label for="numtarjeta">Numero Tarjeta</label>
+<input type="text" id="numtarjeta" name="numtarjeta" type="text">
+</input>
+</li>
 </ol>
 </fieldset>
 -------------------------------------------------
 <fieldset>
-<button onClick={AddOrder}>Confirmar pedido</button>
+<input type="submit" value="CONFIRMAR ORDEN"></input>
 </fieldset>
 </form>
 
