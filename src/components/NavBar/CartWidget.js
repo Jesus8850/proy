@@ -9,14 +9,10 @@ import Button from '@material-ui/core/Button';
 
 const CartWidget = ({show, close, data}) => {
 
-    console.log("valor es ", data?.precio)
-
-    const {cartItems,handleTotalPrice,handleTotal,total,price} = useContext(CartContext)
-
-    console.log("valor desde cart context ", cartItems.item)
+    const {cartItems} = useContext(CartContext)
 
     if (show == true) {
-        console.log("entra al main1 es ", show)
+
     return (  
         <><div className="main">
             <br />
@@ -33,7 +29,6 @@ const CartWidget = ({show, close, data}) => {
 
     )
 }else{
-    console.log("entra al main2 es ", show)
     return (  
         
         <div className = "main2">

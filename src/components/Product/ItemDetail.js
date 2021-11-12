@@ -1,5 +1,4 @@
 
-import ItemCount from "./ItemCount";
 import React,{useState, useContext} from 'react';
 import CartContext from "../../context/CartContext";
 import Counter from "./Counter";
@@ -44,5 +43,3 @@ export const ItemDetail = ({ data }) => {
 };
 
 console.log()
-
-//<ItemCount onAdd ={onAdd} onLess ={onLess} initial={itemF} />

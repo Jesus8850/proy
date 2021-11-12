@@ -9,17 +9,17 @@ export default function Contact() {
 <ol>
 <li>
 <label for="Nombre: ">Nombre</label>
-<input type="text" id="nombre" name="nombre" type="text" placeholder="Escribe tu nombre completo" required autofocus>
+<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required autofocus>
 </input>
 </li>
 <li>
 <label for="email: ">Email</label>
-<input type="text" id="email" name="email" type="email" placeholder="ejemplo@gmail.ar" required>
+<input type="text" id="email" name="email" placeholder="ejemplo@gmail.ar" required>
 </input>
 </li>
 <li>
 <label for="telefono: ">Teléfono</label>
-<input type="text" id="telefono" name="telefono" type="tel" placeholder="Ej. +5411xxxxxxxxx" required>
+<input type="text" id="telefono" name="telefono" placeholder="Ej. +5411xxxxxxxxx" required>
 </input>
 </li>
 <li>

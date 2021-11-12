@@ -1,14 +1,11 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ItemListConteiner from "../components/Product/ItemListConteiner";
 import NotFoundPage from "../Pages/NotFoundPage";
 import Home from "../Pages/Home";
 import PageProd from "../Pages/PageProd";
 import NavBar from "../components/NavBar/NavBar";
 import Categoria from "../Pages/Categoria";
 import Cart from "../Pages/Cart";
-import { CartProvider } from "../context/CartContext";
-import Contact from "../Pages/Contact";
 import Contacto from "../Pages/Contacto";
 
 export default function AppRouter(){

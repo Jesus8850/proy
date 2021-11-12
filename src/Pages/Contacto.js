@@ -1,6 +1,6 @@
-import React,{useState, useEffect, useContext} from "react";
+import React,{ useContext} from "react";
 import CartContext from "../context/CartContext";
-import { getFirestore, collection, getDocs,addDoc } from "firebase/firestore";
+import { collection,addDoc } from "firebase/firestore";
 import db from "../firebase";
 
 export default function Contacto() {
