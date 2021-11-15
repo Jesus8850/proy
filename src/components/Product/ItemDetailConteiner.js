@@ -9,13 +9,13 @@ function ItemDetailConteiner () {
 
     const getItemProd = new Promise((resolve) => {
         setTimeout(() => {
-           const mockProd = [ // tu mock entero. Fijate que los id sean strings porque asi viene el useParams
+           const mockProd = [
               {
                  id: "1",
                  titulo: "Camiseta Eslovenia",
                  descripcion: "Titular",
                  precio: 9000,
-                 img: "CAMISETA TITULAR ESLOVENIA",
+                 img: <img src="/img/Camis1.jpg" alt="C2" />,
                  categoria: "camiseta",
                  stock:10,
               },
@@ -33,7 +33,7 @@ function ItemDetailConteiner () {
                  titulo: "Short Midland",
                  descripcion: "Juego",
                  precio: 1400,
-                 img: "SHORT MIDLAND TITULAR",
+                 img: <img src="/img/Short1.jpg" alt="C2" />,
                  categoria: "short",
                  stock:10,
               },
@@ -50,7 +50,7 @@ function ItemDetailConteiner () {
      }, [id]);
   
 
-    return <ItemDetail data={infoProd}/>;
+    return (<ItemDetail data={infoProd} />);
     
 };
 

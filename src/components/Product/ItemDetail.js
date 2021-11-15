@@ -30,7 +30,9 @@ export const ItemDetail = ({ data }) => {
       <ul>
          <>
             {data?.img}
-            <p>$ {data?.precio}</p>
+            <p>{data?.titulo}</p>
+            <p>Modelo {data?.descripcion}</p>
+            <p>PRECIO: $ {data?.precio}</p>
             
             <div>
         <Counter stock={data?.stock} onAdd={handleOnAdd} />
