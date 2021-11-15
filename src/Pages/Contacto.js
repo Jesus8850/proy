@@ -33,10 +33,11 @@ export default function Contacto() {
          const agregaOrden = async (generarOrden) => {
             const orderFirebase = collection(db, "orders");
             const order = await addDoc(orderFirebase, generarOrden);
-            alert(order.id);
+            alert("ID DE COMPRA: " + order.id);
          };
 
          agregaOrden(generarOrden);
+
       } else {
          alert("LOS MAILS NO COINCIDEN");
       }
