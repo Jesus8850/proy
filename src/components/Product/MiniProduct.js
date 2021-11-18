@@ -1,9 +1,7 @@
 import './miniprod.css';
 
-import React,{useState, useContext} from 'react';
+import React,{useContext} from 'react';
 import CartContext from "../../context/CartContext";
-import CartWidget from '../NavBar/CartWidget';
-import { Item } from './Item';
 
 const MiniProduct = ({item, count}) => {
   const {titulo, precio, id} = item

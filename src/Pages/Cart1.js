@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import { useParams } from "react-router";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import CartWidget from "../components/NavBar/CartWidget";
 
 

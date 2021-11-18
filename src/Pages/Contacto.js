@@ -1,3 +1,5 @@
+import './Contacto.css';
+
 import React, { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
 import { collection, addDoc } from "firebase/firestore";
@@ -51,7 +53,8 @@ export default function Contacto() {
 
    return (
       <form id="pago" onSubmit={addOrder}>
-         <fieldset>
+         <fieldset className ="fieldsetStyle">
+         <br/>
             <legend>Datos del comprador</legend>
             <ol>
                <li>
@@ -61,7 +64,6 @@ export default function Contacto() {
                      type="text"
                      id="nombre"
                      name="nombre"
-                     type="text"
                      placeholder="Escribe tu nombre completo"
                      required
                      autofocus
@@ -105,7 +107,7 @@ export default function Contacto() {
                </li>
             </ol>
          </fieldset>
-         <fieldset>
+         <fieldset className ="fieldsetStyle">
             <legend>Datos de tarjeta de crédito o débito</legend>
             <ol>
                <li>
@@ -134,10 +136,8 @@ export default function Contacto() {
                </li>
             </ol>
          </fieldset>
-         -------------------------------------------------
-         <fieldset>
+            <br/>
             <input type="submit" value="CONFIRMAR ORDEN"></input>
-         </fieldset>
       </form>
    );
 }

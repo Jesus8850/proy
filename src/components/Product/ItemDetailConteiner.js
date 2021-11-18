@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from "react";
 import { ItemDetail }  from "./ItemDetail";
 import { useParams } from "react-router";
+import { LinearProgress } from "@material-ui/core";
 import db from "../../firebase";
-import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function ItemDetailConteiner () {
 
@@ -59,32 +60,27 @@ function ItemDetailConteiner () {
 
 //////////////////////////////////////////////////////////////////
 
-console.log("El ID es: ", id)
 
      async function getPrd(db) {
       const productsCol = id
-         ? query(collection(db, "productos"), where("id", "==", id))
+         ? query(collection(db, "productos"), where("id", "==", Number(id)))
          : collection(db, "productos");
       const prodSnap = await getDocs(productsCol);
       const prodList = prodSnap.docs.map((doc) => doc.data());
-      console.log(prodList)
-      setProdFireDet(prodList);
+      setProdFireDet(prodList[0]);
       return prodList;
    }
-
 
   useEffect(() => {
       getPrd(db)
       },[id])
 
 
-    //return <ItemDetail data={infoProd} />;
-
     return(
     <>
           {loader ? (
-        <h1>cargando...</h1>
-      ) : (<ItemDetail data={infoProd} />)
+        <LinearProgress/>
+      ) : (<ItemDetail data={prodFireDet} />)
       }
 </>
 )

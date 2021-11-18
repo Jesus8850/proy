@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import CartWidget from '../NavBar/CartWidget'
 
 const Counter = ({stock, initial = 0, onAdd}) => {
 	const [count, setCount] = useState(initial)

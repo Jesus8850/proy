@@ -3,11 +3,11 @@ import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 import Context from "../../context/CartContext";
 import db from "../../firebase";
-import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function ItemListConteiner () {
 
-    const { idcat } = useParams();   // traes la propiedad catId, que es la que definiste en tu url como :catId
+    const { idcat } = useParams();
     const [prod, setProd] = useState([])
     const [prodFire, setProdFire] = useState([])
 
@@ -26,20 +26,6 @@ function ItemListConteiner () {
     )
 
 
-    //useEffect( () =>{
-    //    getProd.then ((res) =>{
-     //   setProd(res)
-     //   })
-    //},[]
-    //)
-
-   // useEffect(() => {
-   //     getProd.then((res) => {
-   //         idcat ? setProd(res.filter(i => i.categoria === idcat)) : setProd(res);
-   //     });
-   //  }, []);
-
-
     //funciona
      useEffect(() => {
         getProd.then((res) => {
@@ -51,39 +37,18 @@ function ItemListConteiner () {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-    // async function getPrd(db) {
-    //    const productsCol = collection(db, 'productos');
-    //    //const prodcols = productsCol.where('categoria','==','camiseta')
-    //    const prodSnap = await getDocs (productsCol);
-    //    const prodList = prodSnap.docs.map(doc => doc.data());
-    //    setProdFire(prodList);
-    //    return prodList;
-    //}
-
 
     async function getPrd(db) {
         const productsCol = idcat
            ? query(collection(db, "productos"), where("categoria", "==", idcat))
            : collection(db, "productos");
-        //const prodcols = productsCol.where('categoria','==','camiseta')
         const prodSnap = await getDocs(productsCol);
         const prodList = prodSnap.docs.map((doc) => doc.data());
-        console.log(prodList)
+        console.log("el productsCol ILC es: ",productsCol)
+        console.log("el prd list ILC es: ",prodList)
         setProdFire(prodList);
         return prodList;
      }
-
-    //async function getCat(db) {
-    //    const prodxcat = collection(db, 'productos');
-    //    const prodcols = prodxcat.where('categoria','==','camiseta')
-        //const prodSnap = await getDocs (productsCol);
-
-    //    prodcols.get().then((QuerySnapshot) => {
-    //        const prodList = QuerySnapshot.docs.map(doc => doc.data());
-    //        setProdFire(prodList);
-    //        return prodList;
-    //    })
-    //}
 
     useEffect(() => {
         getPrd(db)

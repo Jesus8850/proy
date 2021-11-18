@@ -1,7 +1,6 @@
 import './CartWidget.css';
 
 import React, { useContext } from "react";
-import { CartProvider } from '../../context/CartContext';
 import CartContext from "../../context/CartContext";
 import MiniProduct from '../Product/MiniProduct';
 import { Link } from 'react-router-dom';
@@ -33,7 +32,7 @@ const CartWidget = ({show, close, data}) => {
         
         <div className = "main2">
         <button onClick={close}>X</button>
-        <h1>COSAS 1</h1>
+        <h1>INFO</h1>
         </div>
         )
 
